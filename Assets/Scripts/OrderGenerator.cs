@@ -10,6 +10,8 @@ public class OrderGenerator : MonoBehaviour
 
     private TMP_Text timerText;
     private TMP_Text deliveryProgress;
+    public float numOfDelivery;
+    public float currNumOfDelivery;
     public float startTime;
     private bool timerActive;
     private float currentTime;
@@ -21,6 +23,7 @@ public class OrderGenerator : MonoBehaviour
         deliveryProgress = GameObject.FindGameObjectWithTag("DeliveryProgress").GetComponent<TMP_Text>();
         currentTime = startTime * 60;
         StartTimer();
+        deliveryProgress.text = currNumOfDelivery.ToString() + " / " + numOfDelivery.ToString();
 
     }
 
@@ -35,6 +38,7 @@ public class OrderGenerator : MonoBehaviour
         
         if(time.Minutes == 0 && time.Seconds == 0)
             StopTimer();
+        
     }
 
     public void StartTimer()
@@ -42,4 +46,17 @@ public class OrderGenerator : MonoBehaviour
 
     public void StopTimer()
         { timerActive = false; }
+
+    public float GetCurrNumOfDelivery()
+    { return currNumOfDelivery; }
+
+    public void SetCurrNumOfDelivery(float currNumOfDelivery)
+    {
+        this.currNumOfDelivery = currNumOfDelivery;
+    }
+
+    public void UpdateDeliveryProgress()
+    {
+        deliveryProgress.text = currNumOfDelivery.ToString() + " / " + numOfDelivery.ToString();
+    }
 }

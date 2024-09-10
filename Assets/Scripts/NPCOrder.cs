@@ -35,4 +35,11 @@ public class NPCOrder : MonoBehaviour
         orderGenerator.GetComponent<OrderGenerator>().SetCurrNumOfDelivery(currNum);
         orderGenerator.GetComponent<OrderGenerator>().UpdateDeliveryProgress();
     }
+
+    private bool CheckOrder()
+    {
+        //If order is the right icecream flavor orderCorrect turns true
+        // else false
+        return false;
+    }
 }

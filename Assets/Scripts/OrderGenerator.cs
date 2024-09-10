@@ -59,4 +59,12 @@ public class OrderGenerator : MonoBehaviour
     {
         deliveryProgress.text = currNumOfDelivery.ToString() + " / " + numOfDelivery.ToString();
     }
+
+    private void CreateOrders()
+    {
+        //Create Icecream Objects and add into Inventory
+    }
+
+
+
 }
